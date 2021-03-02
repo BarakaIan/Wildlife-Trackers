@@ -38,7 +38,7 @@ public class App {
                 return new ModelAndView(model, "AnimalForm.hbs");
             }, new HandlebarsTemplateEngine());
 //
-            post("/addAnimals", (request, response) -> {
+            post("/addAnimal", (request, response) -> {
 
                 Map<String, Object> model = new HashMap<>();
                 String animalName = request.queryParams("animalName");
@@ -81,6 +81,7 @@ public class App {
                 return new ModelAndView(model, "Endangered.hbs");
             }, new HandlebarsTemplateEngine());
 
+
 //        Sightings
             get("/SightingsForm", (request, response) -> {
                 Map<String, Object> model = new HashMap<>();
@@ -92,7 +93,7 @@ public class App {
                 Map<String, Object> model = new HashMap<>();
                 String location = request.queryParams("location");
                 String rangerName = request.queryParams("rangerName");
-                String aniName = request.queryParams("aniName");
+                String aniName = request.queryParams("animalName");
 
                 Sightings sightings = new Sightings(location,rangerName, aniName);
                 sightings.save();
