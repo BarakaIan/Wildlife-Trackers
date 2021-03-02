@@ -38,7 +38,7 @@ public class App {
                 return new ModelAndView(model, "AnimalForm.hbs");
             }, new HandlebarsTemplateEngine());
 //
-            post("/addAnimal", (request, response) -> {
+            post("/addAnimals", (request, response) -> {
 
                 Map<String, Object> model = new HashMap<>();
                 String animalName = request.queryParams("animalName");
