@@ -15,5 +15,10 @@ text-align: center;
 text-decoration: underline;
 text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
 font-size: large;
+color: white;
 
+}
+
+.h3{
+color: white;
 }
