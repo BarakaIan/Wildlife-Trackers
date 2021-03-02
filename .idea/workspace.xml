@@ -62,27 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.EndangeredSpecieTest.healthCannotBeSetToTheWrongProperty">
-    <configuration name="AnimalTest.ageCannotBeSetToTheWrongProperty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;models.AnimalTest.ageCannotBeSetToTheWrongProperty&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.Tests in 'models'">
     <configuration name="EndangeredSpecieTest.endangeredSpecie_instantiatesProperly" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -163,13 +143,33 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Tests in 'models'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;models.*&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'models'" />
         <item itemvalue="Gradle.EndangeredSpecieTest.healthCannotBeSetToTheWrongProperty" />
         <item itemvalue="Gradle.EndangeredSpecieTest.setIdSetsIdProperly" />
         <item itemvalue="Gradle.EndangeredSpecieTest.getNameReturnsNameProperly_HoneyBadger" />
         <item itemvalue="Gradle.EndangeredSpecieTest.endangeredSpecie_instantiatesProperly" />
-        <item itemvalue="Gradle.AnimalTest.ageCannotBeSetToTheWrongProperty" />
       </list>
     </recent_temporary>
   </component>

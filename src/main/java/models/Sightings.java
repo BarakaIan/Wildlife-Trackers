@@ -1,5 +1,7 @@
 package models;
 
+import dao.Sql2oAnimal;
+import dao.Sql2oLocation;
 import jdk.vm.ci.code.Location;
 import org.sql2o.Connection;
 import org.sql2o.Query;
@@ -9,20 +11,20 @@ import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Sightings<Sql2oLocation> {
+
+public class Sightings {
     private int rangersId;
     private int locationId;
     private int animalId;
     private int id;
     private Timestamp lastSighting;
 
-//    private Rangers rangers;
+
     private Location location;
     private Animal animal;
 
-//    private static Sql2oLocation = new abstract Sql2oLocation();
-//    private static Sql2oRangers  = new abstract Sql2oRangers();
-//    private static Sql2oAnimal animalDao = new Sql2oAnimal();
+    private static Sql2oLocation locationDao = new Sql2oLocation();
+    private static Sql2oAnimal animalDao = new Sql2oAnimal();
 
     public Sightings(int rangersId, int locationId, int animalId) {
         this.rangersId = rangersId;
@@ -53,20 +55,18 @@ public abstract class Sightings<Sql2oLocation> {
     public Timestamp getLastSighting() {
         return lastSighting;
     }
-//
-//    public Rangers getRangers() {
-//        return rangers.findById(rangersId);
-//    }
 
-//
-//    public Location getLocation() {
-//        return location.findById(locationId);
-//    }
 
-//
-//    public Animal getAnimal() {
-//        return animal.findById(animalId);
-//    }
+
+
+    public Location getLocation() {
+        return locationDao.findById(locationId);
+    }
+
+
+    public Animal getAnimal() {
+        return animalDao.findById(animalId);
+    }
 
 
     @Override
@@ -85,5 +85,4 @@ public abstract class Sightings<Sql2oLocation> {
         return Objects.hash(getRangersId(), getLocationId(), getAnimalId(), getId());
     }
 }
-
 

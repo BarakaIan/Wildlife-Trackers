@@ -11,19 +11,17 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class SightingsTest {
-//    @Before
-//    public void setUp() throws Exception {
-//        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "moringa", "D2000sep10");
-//    }
+    @Before
+    public void setUp() throws Exception {
+        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "moringa", "D2000sep10");
+    }
 
     private Sightings setUpSightings() {
         Animal testAnimal = new EndangeredSpecie("Honey Badger", "Young", "healthy");
-//        Rangers testRanger =  new Rangers("Honey Badger","ianb.makale@gmail.com", 158920);
-//        Location testLocation = new Location("Near the River");
+        Location testLocation = new Location("Near the River");
         testAnimal.setId(1);
-//        testRanger.setId(1);
-//        testLocation.setId(1);
-//        return new Sightings(testRanger.getId(),testLocation.getId(),testAnimal.getId());
+       testLocation.setId(1);
+       return new Sightings(testLocation.getId(),testAnimal.getId());
     }
 
 
@@ -56,6 +54,14 @@ public class SightingsTest {
         Sightings testSighting = setUpSightings();
         testSighting.setId(1);
         assertEquals(1, testSighting.getId());
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        try (Connection con = DB.sql2o.open()) {
+            String sqlAnimal = "DELETE FROM animals *;";
+            con.createQuery(sqlAnimal).executeUpdate();
+        }
     }
 
 //    @Test

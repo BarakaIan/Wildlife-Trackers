@@ -13,11 +13,11 @@ public class EndangeredSpecieTest {
     private EndangeredSpecie setUpAnimal(){
         return new EndangeredSpecie("Honey Badger", "Young", "healthy");
     }
-//
-//    @Before
-//    public void setUp() throws Exception {
-//        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "moringa", "D2000sep10");
-//    }
+
+    @Before
+    public void setUp() throws Exception {
+        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "moringa", "D2000sep10");
+    }
 
     @Test
     public void endangeredSpecie_instantiatesProperly() {
