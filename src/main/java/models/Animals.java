@@ -4,7 +4,7 @@ import org.sql2o.Connection;
 
 import java.util.List;
 
-public class Animals extends DatabaseManagement {
+public class Animals implements DatabaseManagement {
     private int id;
     private String animalName;
     public String type;
