@@ -9,7 +9,7 @@ First Install sdk Install java Install Intellij.
 ## Set-up
 Get a computer and internet.
  Clone the repository Git clone 
- repository--link https://github.com/BarakaIan/The-Hero-Squad
+ repository--link https://github.com/BarakaIan/Wildlife-Trackers
 
 Move into the directory cd directory name;
 
