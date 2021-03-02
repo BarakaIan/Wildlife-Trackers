@@ -13,6 +13,16 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="wildlife-tracker" />
   </component>
@@ -29,6 +39,11 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/public/Images/css" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -47,13 +62,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.SightingsTest.save_successfully_List">
-    <configuration name="AnimalsTest.save_successfully_List" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="wildlife-tracker.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnimalsTest.Animals_instantiatesName_of_the_animal_true_String" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;models.AnimalsTest.save_successfully_List&quot;" />
+        <option name="scriptParameters" value="--tests &quot;models.AnimalsTest.Animals_instantiatesName_of_the_animal_true_String&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -128,30 +150,13 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="wildlife-tracker" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AnimalsTest.Animals_instantiatesName_of_the_animal_true_String" />
+        <item itemvalue="Application.App" />
         <item itemvalue="Gradle.SightingsTest.save_successfully_List" />
         <item itemvalue="Gradle.SightingsTest.Sighting_location_true_string" />
         <item itemvalue="Gradle.EndangeredTest.save_successfully_List" />
-        <item itemvalue="Gradle.AnimalsTest.save_successfully_List" />
-        <item itemvalue="Gradle.wildlife-tracker" />
       </list>
     </recent_temporary>
   </component>
