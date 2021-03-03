@@ -1,6 +1,5 @@
 package models;
 
-import jdk.vm.ci.code.Location;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,12 +32,12 @@ public class SightingsTest {
         assertEquals("paul",newSight.getRangerName());
     }
 
-//    @Test
-//    public void save_CorrectlyIntoTheDatabase() {
-//        Sightings newSight = new Sightings(12,"near the river","emile");
-//        newSight.save();
-//        assertTrue(Sightings.all().get(0).equals(newSight));
-//    }
+    @Test
+    public void save_CorrectlyIntoTheDatabase() {
+        Sightings newSight = new Sightings(12,"near the river","ian");
+        newSight.save();
+        assertTrue(Sightings.all().get(0).equals(newSight));
+    }
 
 //    @After
 //    public void tearDown() throws Exception {

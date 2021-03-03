@@ -165,8 +165,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
         <item itemvalue="Gradle.SightingsTest.save_CorrectlyIntoTheDatabase" />
+        <item itemvalue="Application.App" />
         <item itemvalue="Gradle.SightingsTest.getRangerName_sightingInstantiatesWithRangerName" />
         <item itemvalue="Gradle.SightingsTest.getLocation_sightingInstantiatesWithLocation" />
         <item itemvalue="Gradle.SightingsTest.sighting_instantiatesCorrectly_true" />
