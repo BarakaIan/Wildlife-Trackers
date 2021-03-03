@@ -10,9 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AnimalTest {
-    private Animal setUpAnimal(){
-        return new Animal("Honey Badger", "Young");
-    }
+
 
 
     @Before
@@ -21,52 +19,19 @@ public class AnimalTest {
     }
 
     @Test
-    public void animalInstantiatesCorrectly() {
-        Animal testAnimal = setUpAnimal();
-        assertTrue(testAnimal instanceof Animal);
+    public void Animals_instantiatesName_of_the_animal_true_String() {
+        Animals testAnimals = new Animals("Rhino");
+        assertEquals("Rhino", testAnimals.getAnimalName());
     }
+
 
     @Test
-    public void getNameReturnsNameProperly() {
-        Animal testAnimal = setUpAnimal();
-        assertEquals("Honey Badger", testAnimal.getName());
+    public void save_successfully_List() {
+        Animals testAnimals = new Animals("Lion");;
+        testAnimals.save();
+        assertTrue(Endangered.getAllEndangered().get(0).equals(testAnimals));
     }
 
-    @Test
-    public void getAgeReturnsAgeProperly() {
-        Animal testAnimal = setUpAnimal();
-        assertEquals("Young", testAnimal.getAge());
-    }
-
-    @Test
-    public void setIdSetsIdProperly() {
-        Animal testAnimal = setUpAnimal();
-        testAnimal.setId(1);
-        assertEquals(1, testAnimal.getId());
-    }
-
-    @Test
-    public void testEquals() {
-        Animal testAnimal = setUpAnimal();
-        Animal testSecondAnimal = new Animal("Honey Badger", "Young");
-        assertTrue(testAnimal.equals(testSecondAnimal));
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void animalThrowsErrorWhenAgeIsSetToWrongProperty() {
-        Animal testSecondAnimal = new Animal("Honey Badger", "not old");
-    }
-
-    @Test
-    public void ageCannotBeSetToTheWrongProperty() {
-        String argumentExceptionMessage = null;
-        try{
-            Animal testSecondAnimal = new Animal("Honey Badger", "not old");
-        } catch(IllegalArgumentException ex){
-            argumentExceptionMessage = ex.getMessage();
-        }
-        assertTrue(argumentExceptionMessage.equals("Bad parameter for age"));
-    }
 
     @After
     public void tearDown() throws Exception {
@@ -74,5 +39,8 @@ public class AnimalTest {
             String sqlAnimal = "DELETE FROM animals *;";
             con.createQuery(sqlAnimal).executeUpdate();
         }
+    }
+
+    private class Animals {
     }
 }

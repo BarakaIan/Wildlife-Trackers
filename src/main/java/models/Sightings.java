@@ -1,7 +1,5 @@
 package models;
 
-import dao.Sql2oAnimal;
-import dao.Sql2oLocation;
 import jdk.vm.ci.code.Location;
 import org.sql2o.Connection;
 import org.sql2o.Query;
@@ -12,77 +10,77 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Sightings {
-    private int rangersId;
-    private int locationId;
-    private int animalId;
+public class Sightings implements DatabaseManagement{
+
     private int id;
-    private Timestamp lastSighting;
+    private String location;
+    private String rangerName;
+    private String aniName;
 
-
-    private Location location;
-    private Animal animal;
-
-    private static Sql2oLocation locationDao = new Sql2oLocation();
-    private static Sql2oAnimal animalDao = new Sql2oAnimal();
-
-    public Sightings(int rangersId, int locationId, int animalId) {
-        this.rangersId = rangersId;
-        this.locationId = locationId;
-        this.animalId = animalId;
-    }
-
-    public int getRangersId() {
-        return rangersId;
-    }
-
-    public int getLocationId() {
-        return locationId;
-    }
-
-    public int getAnimalId() {
-        return animalId;
-    }
-
-    public int getId() {
-        return id;
+    public Sightings(String location, String rangerName, String aniName) {
+        this.id = id;
+        this.location = location;
+        this.rangerName = rangerName;
+        this.aniName = aniName;
+//        public Timestamp time_sighted;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public Timestamp getLastSighting() {
-        return lastSighting;
+    public String getAniName() {
+        return aniName;
     }
 
-
-
-
-    public Location getLocation() {
-        return locationDao.findById(locationId);
+    public int getId() {
+        return id;
     }
 
-
-    public Animal getAnimal() {
-        return animalDao.findById(animalId);
+    public String getLocation() {
+        return location;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Sightings)) return false;
-        Sightings sightings = (Sightings) o;
-        return getRangersId() == sightings.getRangersId() &&
-                getLocationId() == sightings.getLocationId() &&
-                getAnimalId() == sightings.getAnimalId() &&
-                getId() == sightings.getId();
+    public String getRangerName() {
+        return rangerName;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getRangersId(), getLocationId(), getAnimalId(), getId());
+    public static List<Sightings> getAllSightings(){
+        String sql = "SELECT * FROM sightings;";
+
+        try (Connection con = DB.sql2o.open()){
+            Query query =con.createQuery(sql);
+            System.out.println(query.executeAndFetch(Sightings.class));
+            return query.executeAndFetch(Sightings.class);
+        }
     }
+
+    public void save() {
+        try (Connection con = DB.sql2o.open()) {
+            String sql = "INSERT INTO sightings (location, rangerName, aniName) VALUES (:location, :rangerName, :aniName);";
+            this.id = (int) con.createQuery(sql,true)
+                    .throwOnMappingFailure(false)
+                    .addParameter("location", this.location)
+                    .addParameter("rangerName", this.rangerName)
+                    .addParameter("aniName", this.aniName)
+                    .executeUpdate()
+                    .getKey();
+            setId(id);
+        }catch (Sql2oException ex ){
+            System.out.println(ex);
+        }
+    }
+    public void delete() {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "DELETE FROM sightings WHERE id = :id;";
+            con.createQuery(sql)
+                    .addParameter("id", this.id)
+                    .executeUpdate();
+
+        }catch (Sql2oException ex ){
+            System.out.println(ex);
+        }
+    }
+
 }
 
