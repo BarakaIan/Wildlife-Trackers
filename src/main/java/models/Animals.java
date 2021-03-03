@@ -6,7 +6,7 @@ import org.sql2o.Sql2oException;
 import java.util.List;
 import java.util.Objects;
 
-public class Animals implements AnimalInterface{
+public class Animals implements AnimalInterface {
     public Animals(String name) {
         this.name = name;
         this.endangered = false;
@@ -19,6 +19,8 @@ public class Animals implements AnimalInterface{
     public int getId() {
         return id;
     }
+
+
     @Override
     public void save() {
         try(Connection con = DB.sql2o.open()) {
