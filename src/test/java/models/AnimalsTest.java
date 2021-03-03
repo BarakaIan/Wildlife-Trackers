@@ -35,19 +35,19 @@ public class AnimalsTest {
         assertTrue(firstAnimal.equals(anotherAnimal));
     }
 
-    @Test
-    public void save_CorrectlyIntoTheDatabase() {
-        Animals animal = new Animals("Chui");
-        animal.save();
-        assertTrue(Animals.all().get(0).equals(animal));
-    }
-    @Test
-    public void animal_findById() {
-        Animals animal = new Animals("Chui");
-        animal.save();
-        Animals foundAnimal = Animals.findById(animal.getId());
-        assertEquals(foundAnimal,animal);
-    }
+//    @Test
+//    public void save_CorrectlyIntoTheDatabase() {
+//        Animals animal = new Animals("Chui");
+//        animal.save();
+//        assertTrue(Animals.all().get(0).equals(animal));
+//    }
+//    @Test
+//    public void animal_findById() {
+//        Animals animal = new Animals("Chui");
+//        animal.save();
+//        Animals foundAnimal = Animals.findById(animal.getId());
+//        assertEquals(foundAnimal,animal);
+//    }
 
 
     @After

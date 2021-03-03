@@ -75,20 +75,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <module name="wildlife-tracker.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnimalsTest.save_CorrectlyIntoTheDatabase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.SightingsTest.save_CorrectlyIntoTheDatabase">
+    <configuration name="EndangeredAnimalTest.equals_returnsTrueIfNameIsTheSame" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;models.AnimalsTest.save_CorrectlyIntoTheDatabase&quot;" />
+        <option name="scriptParameters" value="--tests &quot;models.EndangeredAnimalTest.equals_returnsTrueIfNameIsTheSame&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -163,13 +156,33 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="SightingsTest.sighting_instantiatesCorrectly_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;models.SightingsTest.sighting_instantiatesCorrectly_true&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AnimalsTest.save_CorrectlyIntoTheDatabase" />
         <item itemvalue="Gradle.SightingsTest.save_CorrectlyIntoTheDatabase" />
-        <item itemvalue="Application.App" />
         <item itemvalue="Gradle.SightingsTest.getRangerName_sightingInstantiatesWithRangerName" />
         <item itemvalue="Gradle.SightingsTest.getLocation_sightingInstantiatesWithLocation" />
+        <item itemvalue="Gradle.SightingsTest.sighting_instantiatesCorrectly_true" />
+        <item itemvalue="Gradle.EndangeredAnimalTest.equals_returnsTrueIfNameIsTheSame" />
       </list>
     </recent_temporary>
   </component>
