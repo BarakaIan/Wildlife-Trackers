@@ -19,7 +19,12 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -29,18 +34,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1pCggax0C5LJ62OWKujjnEs7qUe" />
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="models" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/public/Images/css" />
     </key>
@@ -62,20 +75,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <module name="wildlife-tracker.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EndangeredSpecieTest.getNameReturnsNameProperly_HoneyBadger" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.SightingsTest.save_CorrectlyIntoTheDatabase">
+    <configuration name="EndangeredAnimalTest.save_CorrectlyIntoTheDatabase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;models.EndangeredSpecieTest.getNameReturnsNameProperly_HoneyBadger&quot;" />
+        <option name="scriptParameters" value="--tests &quot;models.EndangeredAnimalTest.save_CorrectlyIntoTheDatabase&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -90,12 +96,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="EndangeredSpecieTest.healthCannotBeSetToTheWrongProperty" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SightingsTest.getLocation_sightingInstantiatesWithLocation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;models.EndangeredSpecieTest.healthCannotBeSetToTheWrongProperty&quot;" />
+        <option name="scriptParameters" value="--tests &quot;models.SightingsTest.getLocation_sightingInstantiatesWithLocation&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -110,12 +116,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="EndangeredSpecieTest.setIdSetsIdProperly" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SightingsTest.getRangerName_sightingInstantiatesWithRangerName" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;models.EndangeredSpecieTest.setIdSetsIdProperly&quot;" />
+        <option name="scriptParameters" value="--tests &quot;models.SightingsTest.getRangerName_sightingInstantiatesWithRangerName&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -130,12 +136,32 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'models'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SightingsTest.save_CorrectlyIntoTheDatabase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;models.*&quot;" />
+        <option name="scriptParameters" value="--tests &quot;models.SightingsTest.save_CorrectlyIntoTheDatabase&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SightingsTest.sighting_instantiatesCorrectly_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;models.SightingsTest.sighting_instantiatesCorrectly_true&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -152,12 +178,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="Gradle.Tests in 'models'" />
-        <item itemvalue="Gradle.EndangeredSpecieTest.healthCannotBeSetToTheWrongProperty" />
-        <item itemvalue="Gradle.EndangeredSpecieTest.setIdSetsIdProperly" />
-        <item itemvalue="Gradle.EndangeredSpecieTest.getNameReturnsNameProperly_HoneyBadger" />
+        <item itemvalue="Gradle.SightingsTest.save_CorrectlyIntoTheDatabase" />
+        <item itemvalue="Gradle.SightingsTest.getRangerName_sightingInstantiatesWithRangerName" />
+        <item itemvalue="Gradle.SightingsTest.getLocation_sightingInstantiatesWithLocation" />
+        <item itemvalue="Gradle.SightingsTest.sighting_instantiatesCorrectly_true" />
+        <item itemvalue="Gradle.EndangeredAnimalTest.save_CorrectlyIntoTheDatabase" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
   </component>
 </project>

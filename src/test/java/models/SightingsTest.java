@@ -17,24 +17,36 @@ public class SightingsTest {
     }
 
     @Test
-    public void Sighting_location_true_string(){
-        Sightings testSightings = new Sightings("Zone B", "Kamala", "tiger");
-        assertEquals("Zone B", testSightings.getLocation());
-    }
-    @Test
-    public void save_successfully_List() {
-        Sightings testSightings = new Sightings("Zone A", "Kamala", "Zebra");;
-        testSightings.save();
-        assertTrue(Endangered.getAllEndangered().get(0).equals(testSightings));
+    public void sighting_instantiatesCorrectly_true(){
+        Sightings newSight = new Sightings(1,"near the river","paul");
+        assertTrue(newSight instanceof Sightings);
     }
 
-    @After
-    public void tearDown() throws Exception {
-        try (Connection con = DB.sql2o.open()) {
-            String sqlAnimal = "DELETE FROM animals *;";
-            con.createQuery(sqlAnimal).executeUpdate();
-        }
+    @Test
+    public void getLocation_sightingInstantiatesWithLocation(){
+        Sightings newSight = new Sightings(1,"near the river","paul");
+        assertEquals("near the river",newSight.getLocation());
     }
+    @Test
+    public void getRangerName_sightingInstantiatesWithRangerName(){
+        Sightings newSight = new Sightings(1,"near the river","paul");
+        assertEquals("paul",newSight.getRangerName());
+    }
+
+//    @Test
+//    public void save_CorrectlyIntoTheDatabase() {
+//        Sightings newSight = new Sightings(12,"near the river","emile");
+//        newSight.save();
+//        assertTrue(Sightings.all().get(0).equals(newSight));
+//    }
+
+//    @After
+//    public void tearDown() throws Exception {
+//        try (Connection con = DB.sql2o.open()) {
+//            String sqlAnimal = "DELETE FROM animals *;";
+//            con.createQuery(sqlAnimal).executeUpdate();
+//        }
+//    }
 
 //
 }

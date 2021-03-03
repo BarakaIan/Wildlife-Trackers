@@ -1,6 +1,5 @@
 package models;
 
-import jdk.vm.ci.code.Location;
 import org.sql2o.Connection;
 import org.sql2o.Query;
 import org.sql2o.Sql2oException;
@@ -10,31 +9,13 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Sightings implements DatabaseManagement{
+public class Sightings implements SightingsInterface {
+    private int animalId;
 
-    private int id;
-    private String location;
-    private String rangerName;
-    private String aniName;
-
-    public Sightings(String location, String rangerName, String aniName) {
-        this.id = id;
+    public Sightings(int animalId, String location, String rangerName) {
+        this.animalId = animalId;
         this.location = location;
         this.rangerName = rangerName;
-        this.aniName = aniName;
-//        public Timestamp time_sighted;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getAniName() {
-        return aniName;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getLocation() {
@@ -45,42 +26,72 @@ public class Sightings implements DatabaseManagement{
         return rangerName;
     }
 
-    public static List<Sightings> getAllSightings(){
-        String sql = "SELECT * FROM sightings;";
+    private String location;
+    private String rangerName;
 
-        try (Connection con = DB.sql2o.open()){
-            Query query =con.createQuery(sql);
-            System.out.println(query.executeAndFetch(Sightings.class));
-            return query.executeAndFetch(Sightings.class);
-        }
+    public int getId() {
+        return id;
     }
 
+    private int id;
+
+    @Override
     public void save() {
         try (Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO sightings (location, rangerName, aniName) VALUES (:location, :rangerName, :aniName);";
-            this.id = (int) con.createQuery(sql,true)
-                    .throwOnMappingFailure(false)
-                    .addParameter("location", this.location)
+            String sql = "INSERT INTO sightings (animalId, rangerName, location) VALUES (:animalId,:rangerName,:location)";
+            this.id = (int) con.createQuery(sql, true)
+                    .addParameter("animalId", this.animalId)
                     .addParameter("rangerName", this.rangerName)
-                    .addParameter("aniName", this.aniName)
+                    .addParameter("location", this.location)
+                    .throwOnMappingFailure(false)
                     .executeUpdate()
                     .getKey();
-            setId(id);
-        }catch (Sql2oException ex ){
-            System.out.println(ex);
         }
     }
-    public void delete() {
-        try(Connection con = DB.sql2o.open()) {
-            String sql = "DELETE FROM sightings WHERE id = :id;";
+
+    public static void delete(int id) {
+        String sql = "DELETE from sightings WHERE id=:id";
+        try (Connection con = DB.sql2o.open()) {
             con.createQuery(sql)
-                    .addParameter("id", this.id)
+                    .addParameter("id", id)
                     .executeUpdate();
-
-        }catch (Sql2oException ex ){
+        } catch (Sql2oException ex) {
             System.out.println(ex);
         }
     }
 
-}
+    public static Sightings findById(int id) {
+        try (Connection conn = DB.sql2o.open()) {
+            String sql = "SELECT * FROM  sightings WHERE id=:id";
+            return conn.createQuery(sql)
+                    .addParameter("id", id)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetchFirst(Sightings.class);
+        }
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sightings sightings = (Sightings) o;
+        return animalId == sightings.animalId &&
+                id == sightings.id &&
+                location.equals(sightings.location) &&
+                rangerName.equals(sightings.rangerName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(animalId, location, rangerName, id);
+    }
+
+    public static List<Sightings> all() {
+        String sql = "SELECT * FROM sightings";
+        try (Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql).throwOnMappingFailure(false).executeAndFetch(Sightings.class);
+        }
+    }
+}
+//}
+//
