@@ -16,22 +16,19 @@ public class EndangeredTest {
         DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "moringa", "D2000sep10");
     }
 
-
-    @Test(expected = IllegalArgumentException.class)
-    public void endangeredSpecieThrowsErrorWhenAWrongPropertyIsSet() {
-        EndangeredSpecie testEndangeredSpecie = new EndangeredSpecie("Honey Badger", "Young", "heal");
-    }
     @Test
-    public void healthCannotBeSetToTheWrongProperty() {
-        String argumentExceptionMessage = null;
-        try{
-            EndangeredSpecie testEndangeredSpecie = new EndangeredSpecie("Honey Badger", "Young", "heal");
-        } catch(IllegalArgumentException ex){
-            argumentExceptionMessage = ex.getMessage();
-        }
-        assertTrue(argumentExceptionMessage.equals("Bad parameter for health"));
+    public void Animals_instantiatesName_of_the_animal_true_String(){
+        Endangered testEndangered = new Endangered("Lion", "Okay", "Newborn");
+        assertEquals("Lion", testEndangered.getName());
     }
 
+
+    @Test
+    public void save_successfully_List() {
+        Endangered testEndangered = new Endangered("Lion", "Okay", "Newborn");;
+        testEndangered.save();
+        assertTrue(Endangered.getAllEndangered().get(0).equals(testEndangered));
+    }
     @After
     public void tearDown() throws Exception {
         try (Connection con = DB.sql2o.open()) {

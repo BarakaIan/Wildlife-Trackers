@@ -16,6 +16,17 @@ public class SightingsTest {
         DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "moringa", "D2000sep10");
     }
 
+    @Test
+    public void Sighting_location_true_string(){
+        Sightings testSightings = new Sightings("Zone B", "Kamala", "tiger");
+        assertEquals("Zone B", testSightings.getLocation());
+    }
+    @Test
+    public void save_successfully_List() {
+        Sightings testSightings = new Sightings("Zone A", "Kamala", "Zebra");;
+        testSightings.save();
+        assertTrue(Endangered.getAllEndangered().get(0).equals(testSightings));
+    }
 
     @After
     public void tearDown() throws Exception {
