@@ -1,19 +1,16 @@
-<<<<<<< HEAD
+
 ## Wildlife-Trackers-App
 ## The Author is
 ## by Ian Baraka
 ## Description
 # an application that allows Rangers to track wildlife sightings in the area.
-=======
+
 ## The-Wildlife-Trackers-App
 ## The Author is
 ## by Ian Baraka
 ## Description
 #an application that allows Rangers to track wildlife sightings in the area.
 
-
-
->>>>>>> b66ade8259338c36dcbea2e168d2974e85295dd3
 ## Installation and Prerequisites
 First Install sdk Install java Install Intellij.
 
