@@ -1,4 +1,4 @@
-
+import models.Animals;
 import models.Endangered;
 import models.Sightings;
 import spark.ModelAndView;
@@ -10,6 +10,8 @@ import java.util.Map;
 import static spark.Spark.*;
 
 public class App {
+    private static Animals animals;
+
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (processBuilder.environment().get("PORT") != null) {
@@ -41,7 +43,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String animalName = request.queryParams("animalName");
 
-            Animals animals = new Animals(animalName);
+            Animals animal = new Animals(animalName);
             animals.save();
             model.put("animals", animals);
             return new ModelAndView(model, "SuccessAnimal.hbs");
@@ -106,7 +108,6 @@ public class App {
 
 
     }
-
 
 
 }

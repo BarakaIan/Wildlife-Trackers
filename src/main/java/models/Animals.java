@@ -2,9 +2,9 @@ package models;
 
 import org.sql2o.Connection;
 
-import java.util.Objects;
+import java.util.List;
 
-public class Animal implements DatabaseManagement {
+public class Animals  implements DatabaseManagement{
     private int id;
     private String animalName;
     public String type;
@@ -12,7 +12,7 @@ public class Animal implements DatabaseManagement {
 
 //    private final Sql2o sql2o;
 
-    public Animals(String animalName) {
+    public Animals( String animalName) {
         this.animalName = animalName;
         this.setType(DATABASE_TYPE);
 
@@ -45,10 +45,10 @@ public class Animal implements DatabaseManagement {
     }
 
     @Override
-    public boolean equals(Object otherAnimals) {
-        if (!(otherAnimals instanceof Animals)) {
+    public boolean equals (Object otherAnimals){
+        if (!(otherAnimals instanceof Animals)){
             return false;
-        } else {
+        }else{
             Animals newAnimals = (Animals) otherAnimals;
             return this.getAnimalName().equals(newAnimals.getAnimalName()) &&
                     this.getId() == newAnimals.getId();
@@ -56,11 +56,11 @@ public class Animal implements DatabaseManagement {
     }
 
 
-    public static List<Animals> getAllAnimals() {
+    public static List<Animals> getAllAnimals(){
         String sql = "SELECT * FROM animals where type='animal';";
 
-        try (Connection con = DB.sql2o.open()) {
-            return con.createQuery(sql)
+        try (Connection con = DB.sql2o.open()){
+            return   con.createQuery(sql)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(Animals.class);
 
@@ -68,9 +68,9 @@ public class Animal implements DatabaseManagement {
     }
 
     public void save() {
-        try (Connection con = DB.sql2o.open()) {
+        try (Connection con = DB.sql2o.open()){
             String sql = "INSERT INTO animals (animalname, type) VALUES (:animalname, :type)";
-            this.id = (int) con.createQuery(sql, true)
+            this.id = (int) con.createQuery(sql,true)
                     .addParameter("animalname", this.animalName)
                     .addParameter("type", this.type)
                     .executeUpdate()
@@ -80,8 +80,9 @@ public class Animal implements DatabaseManagement {
     }
 
 
-    public void delete() {
-        try (Connection con = DB.sql2o.open()) {
+
+    public void delete(){
+        try (Connection con = DB.sql2o.open()){
             String sql = "DELETE FROM animals WHERE id =:id;";
             con.createQuery(sql)
                     .addParameter("id", this.id)
