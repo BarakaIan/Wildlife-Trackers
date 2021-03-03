@@ -1,0 +1,17 @@
+body{
+background: url('images/dusan-veverkolog-V3lZQ2789JI-unsplash (1).jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 20px;
+}
+
+.container{
+color: white;
+text-align: center;
+text-decoration: underline;
+text-shadow: 0 0 3px #0000FF, 0 0 5px #0000FF;
+color: black;
+font-size: large;
+}
