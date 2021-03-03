@@ -30,5 +30,5 @@ Currently there are no bugs but i will keep it updated with the latest trends.
 
 ## Link
 
-##License
+## License
 MIT licence
