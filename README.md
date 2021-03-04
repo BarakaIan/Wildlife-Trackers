@@ -1,8 +1,6 @@
 # wildlife-tracker
 A website for rangers to track wildlife activities that go around newborn , mature and old animals checking their health and species.
-## Below is a  link video to demonstrate the project
 
-![Uploading pexels-virginio-sanches-226368.jpg…]()
 
 <h1 align="center">
   Wildlife tacker
