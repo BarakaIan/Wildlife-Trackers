@@ -1,7 +1,8 @@
 # wildlife-tracker
 A website for rangers to track wildlife activities that go around newborn , mature and old animals checking their health and species.
+## Below is a  link video to demonstrate the project
 
-<video src="https://www.pexels.com/video/a-brown-monkey-eating-bread-2436088/" alt="/">
+##  https://www.istockphoto.com/video/cheetah-running-gm130544177-6634683?utm_campaign=srp_videos_inline&utm_content=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fvideos%2Frunning%2520cheetah%2F&utm_medium=affiliate&utm_source=pexels&utm_term=running%20cheetah
 <h1 align="center">
   Wildlife tacker
 </h1>
@@ -58,8 +59,8 @@ The program is designed and developed using latest Technology, Hence making it S
     Input: animal name<br>
     Output:Animal name<br>
     NEXT: <br>
-    User :Estimated age <br>
-    Input : Estimated age<br>
+    User : age <br>
+    Input :  age<br>
     Output :age<br>
     Next:<br>
     Input : Health level<br>
@@ -69,8 +70,8 @@ The program is designed and developed using latest Technology, Hence making it S
 Database installation
 * In PSQL:
 * CREATE DATABASE wildlife_tracker;
-* CREATE TABLE animals(id serial PRIMARY KEY, name varchar, age varchar, species varchar, health varchar);
-* CREATE TABLE sighting (id serial PRIMARY KEY, name varchar, location varchar, animalId int,timestamp timestamp);
+* CREATE TABLE animals(id serial PRIMARY KEY, name varchar, age varchar, health varchar);
+* CREATE TABLE sightings (id serial PRIMARY KEY, name varchar, location varchar, animalId int);
 
 This software uses following open source packages.
 
@@ -95,9 +96,8 @@ You can have this Program Deployed into you choice Deployement Service since thi
 	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
 
-## You may also like...
-
-- [hairsalon](github.com/fatahrez/hairsalon) -Hair salon
+## Bugs
+Currently there are no bugs available but I will keep updating my codes each time with the latest trends in the game.
 
 ## License
 
@@ -106,5 +106,7 @@ MIT
 ---
 
 
-> GitHub [@fatahrez](https://github.com/fatahrez) &nbsp;&middot;&nbsp;
+## You like my work? Leave a comment in the comments section or beep me via email at ianb.makale@gmail.com. or contact me via the 24 hour hotline Number; +254719244916.
+
+## Also if you are receiving some errors please brief me for immediate changes.
 
