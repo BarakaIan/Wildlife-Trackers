@@ -105,7 +105,7 @@ MIT
 ---
 
 
-## You like my work? Leave a comment in the comments section or beep me via email at ianb.makale@gmail.com. or contact me via the 24 hour hotline Number; +254719244916.
+## You like my work? Leave a comment in the comments section or communicate with me via email at ianb.makale@gmail.com. or contact me via the 24 hour hotline Number; +254719244916.
 
 ## Also if you are receiving some errors please brief me for immediate changes.
 
